@@ -1,9 +1,9 @@
 'use strict';
 
-import 'preloader';
+import './preloader';
 
-import routes from 'routes';
-import router from 'global/router';
+import routes from './routes';
+import router from '../global/router';
 
 /* Initialize Locales */
 l20n.initializeLocales(__APPNAME__, {

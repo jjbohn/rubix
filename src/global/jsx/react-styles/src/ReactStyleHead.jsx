@@ -1,6 +1,5 @@
 /**
  * @providesModule ReactStyleHead
- * @jsx React.DOM
  */
 
 'use strict'

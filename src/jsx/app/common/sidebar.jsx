@@ -1,10 +1,10 @@
 import {
   Sidebar, SidebarNav, SidebarNavItem,
   SidebarControls, SidebarControlBtn
-} from 'global/jsx/sidebar_component';
+} from '../global/jsx/sidebar_component';
 
 import { Link } from 'react-router';
-import LoremIpsum from 'global/jsx/loremipsum';
+import LoremIpsum from '../global/jsx/loremipsum';
 
 class ApplicationSidebar extends React.Component {
   render() {

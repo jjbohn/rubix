@@ -1,6 +1,5 @@
 /**
  * @providesModule ReactStyleRulesManager
- * @jsx React.DOM
  */
 
 'use strict'
@@ -99,4 +98,3 @@ ReactStyleRulesManager.prototype.renderToComponents = function() {
 }
 
 module.exports = ReactStyleRulesManager;
-
