@@ -1,5 +1,4 @@
 import { State, Navigation } from 'react-router';
-import TransitionHook from 'react-router/lib/TransitionHook';
 
 export function EnhancedNavigation(ComposedComponent) {
   return React.createClass({

@@ -1,15 +1,10 @@
 import { Route, Router } from 'react-router';
-import BrowserHistory from 'react-router/lib/BrowserHistory';
-import HashHistory from 'react-router/lib/HashHistory';
+import { createHistory } from 'history';
 
 import Blank from './routes/blank';
 
 export default (withHistory, onUpdate) => {
-  const history = withHistory?
-                  (Modernizr.history ?
-                    new BrowserHistory
-                  : new HashHistory)
-                : null;
+  const history = createHistory();
   return (
     <Router history={history} onUpdate={onUpdate}>
       <Route path='/' component={Blank} />

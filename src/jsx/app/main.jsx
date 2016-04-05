@@ -1,15 +1,13 @@
 'use strict';
+console.log('test');
 
 import './preloader';
 
 import routes from './routes';
-import router from '../global/router';
+import router from '../../global/router';
+import Pace from '../../global/pace';
 
-/* Initialize Locales */
-l20n.initializeLocales(__APPNAME__, {
-  'locales': ['en-US', 'fr', 'it', 'ge', 'ar', 'ch'],
-  'default': 'en-US'
-});
+alert("test");
 
 Pace.once('hide', () => {
   $('#pace-loader').removeClass('pace-big').addClass('pace-small');

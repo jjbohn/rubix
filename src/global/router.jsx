@@ -1,5 +1,5 @@
 import { Router } from 'react-router';
-import Location from 'react-router/lib/Location';
+import { createLocation } from 'history';
 
 if(window.hasOwnProperty('vex')) {
   vex.defaultOptions.className = 'vex-theme-flat-attack';
@@ -19,7 +19,7 @@ var onUpdate = (notReady) => {
 
   if(!notReady) {
     // l20n initialized only after everything is rendered/updated
-    l20n.ready();
+    /* l20n.ready(); */
     setTimeout(() => {
       $('body').removeClass('fade-out');
     }, 500);
@@ -30,7 +30,7 @@ var InitializeRouter = (routes) => {
   onUpdate(true);
   var rootInstance = React.render(routes, document.getElementById('app-container'), () => {
     // l20n initialized only after everything is rendered/updated
-    l20n.ready();
+    /* l20n.ready(); */
     setTimeout(() => {
       $('body').removeClass('fade-out');
     }, 500);
@@ -56,7 +56,7 @@ module.exports = (routes) => {
       global.StaticComponent = React.createClass({
         render() {
           var Handler = null;
-          var location = new Location(this.props.path, this.props.query);
+          var location = createLocation(this.props.path, this.props.query);
           ReactBootstrap.Dispatcher.removeAllListeners();
           rubix_bootstrap.core.reset_globals_BANG_();
           Router.run(routes(false), location, (e, i, t) => {

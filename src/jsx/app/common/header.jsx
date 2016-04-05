@@ -1,7 +1,7 @@
 import { State, Navigation } from 'react-router';
 import classNames from 'classnames';
 
-import { SidebarBtn } from '../global/jsx/sidebar_component';
+import { SidebarBtn } from '../../../global/jsx/sidebar_component';
 
 class Brand extends React.Component {
   render() {
