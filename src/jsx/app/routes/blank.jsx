@@ -5,6 +5,7 @@ import Header from '../common/header';
 import Sidebar from '../common/sidebar';
 import Footer from '../common/footer';
 
+
 class Body extends React.Component {
   render() {
     return (

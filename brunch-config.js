@@ -5,7 +5,6 @@ module.exports = {
     watched: 'src'
   },
   conventions: {
-    ignored: /^test/,
     vendor: /(^bower_components|node_modules|vendor)[\\/]/
   },
   modules: {
@@ -16,11 +15,15 @@ module.exports = {
   files: {
     javascripts: {
       joinTo: {
-        'app.js': /^src/,
-        'vendor.js': /^(?!src)/
+        'app.js': /^src\/(?!common)/,
+        'vendor.js': /^(?!src)/,
+        'bootstrap.js': /^src\/common\/rubix-bootstrap\//,
+        'rubix.js': /^src\/common\/rubix\//
       }
     },
-    stylesheets: {joinTo: 'app.css'},
+    stylesheets: {
+      joinTo: 'app.css'
+    },
     templates: {joinTo: 'app.js'}
   },
   plugins: {

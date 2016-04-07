@@ -7,7 +7,7 @@ if(window.hasOwnProperty('vex')) {
 
 var onUpdate = (notReady) => {
   // cleanup (do not modify)
-  rubix_bootstrap.core.reset_globals_BANG_();
+  /* rubix_bootstrap.core.reset_globals_BANG_(); */
   if(window.Rubix) window.Rubix.Cleanup();
 
   Pace.restart();
@@ -58,7 +58,7 @@ module.exports = (routes) => {
           var Handler = null;
           var location = createLocation(this.props.path, this.props.query);
           ReactBootstrap.Dispatcher.removeAllListeners();
-          rubix_bootstrap.core.reset_globals_BANG_();
+          /* rubix_bootstrap.core.reset_globals_BANG_(); */
           Router.run(routes(false), location, (e, i, t) => {
             Handler = <Router {...i} />;
           });
@@ -68,7 +68,7 @@ module.exports = (routes) => {
     } else {
       return () => {
         ReactBootstrap.Dispatcher.removeAllListeners();
-        rubix_bootstrap.core.reset_globals_BANG_();
+        /* rubix_bootstrap.core.reset_globals_BANG_(); */
         return routes(false);
       };
     }

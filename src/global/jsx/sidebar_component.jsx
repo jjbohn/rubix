@@ -1,7 +1,7 @@
 import { Link, State, Navigation } from 'react-router';
 import classNames from 'classnames';
 
-var openState = (!Modernizr.touch) ? (localStorage.getItem('sidebar-open-state') === 'true' ? true : false) : false;
+var openState = (false) ? (localStorage.getItem('sidebar-open-state') === 'true' ? true : false) : false;
 export default function SidebarMixin(ComposedComponent) {
   return React.createClass({
     displayName: 'SidebarMixin',
