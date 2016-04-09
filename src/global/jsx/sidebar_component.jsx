@@ -1,5 +1,6 @@
 import { Link, State, Navigation } from 'react-router';
 import classNames from 'classnames';
+require('perfect-scrollbar/jquery')($);
 
 var openState = (false) ? (localStorage.getItem('sidebar-open-state') === 'true' ? true : false) : false;
 export default function SidebarMixin(ComposedComponent) {
@@ -263,7 +264,8 @@ export var SidebarNavItem = React.createClass({
       var height = $(node).height();
       $(node).css('height', height).animate({
         height: '45px'
-      }, 125, 'easeInOutSine', () => {
+        /* }, 125, 'easeInOutSine', () => { */
+      }, 125, 'swing', () => {
         $(node).css('height', '');
         try {
           this.setState({
@@ -287,7 +289,8 @@ export var SidebarNavItem = React.createClass({
         $(node).removeClass('open');
         $(node).css('height', '45px').animate({
           height: height
-        }, 125, 'easeInOutSine', () => {
+          /* }, 125, 'easeInOutSine', () => { */
+        }, 125, 'swing', () => {
           $(node).css('height', '');
           try {
             this.setState({
@@ -350,9 +353,12 @@ export var SidebarNavItem = React.createClass({
     ReactBootstrap.Dispatcher.on('layout:dir', this.handleLayoutDirChange);
     ReactBootstrap.Dispatcher.on('sidebar:openstate', this.handleOpenState);
   },
+  isActive() {
+    true
+  },
   activateNavItem(props) {
     var active = props.active || false;
-    var currentLocation = this.context.router.state.location.pathname;
+    var currentLocation = "/";
 
     if(!active && props.href) {
       active = this.isActive(props.href) && (currentLocation == props.href);

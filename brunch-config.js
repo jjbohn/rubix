@@ -9,16 +9,20 @@ module.exports = {
   },
   modules: {
     autoRequire: {
-      'app.js': ["src/jsx/app/main"]
+      'app.js': ["src/globals", "src/jsx/app/main"]
     }
   },
   files: {
     javascripts: {
-      joinTo: {
-        'app.js': /^src\/(?!common)/,
-        'vendor.js': /^(?!src)/,
-        'bootstrap.js': /^src\/common\/rubix-bootstrap\//,
-        'rubix.js': /^src\/common\/rubix\//
+      /* joinTo: {
+         'app.js': /^src\/(?!common)/,
+         'globals.js': "src/common/globals.js",
+         'bootstrap.js': "src/common/rubix-bootstrap/rubix-bootstrap.js",
+         'rubix.js': /^src\/common\/rubix\//
+         } */
+      joinTo: "app.js",
+      order: {
+        before: ["globals.js", "main.jsx"]
       }
     },
     stylesheets: {
@@ -36,7 +40,9 @@ module.exports = {
   npm: {
     enabled: true,
     globals: {
-      React: "react"
+      React: "react",
+      ReactBootstrap: "react-bootstrap",
+      global: "global"
     }
   }
 }

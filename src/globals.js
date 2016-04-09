@@ -1,4 +1,5 @@
 global.window = global;
+
 global.navigator = {
   userAgent: {
     indexOf: function() {return true;},
@@ -28,5 +29,5 @@ global.ReactBootstrap = {
 
 global.uuid = require('uuid');
 
-require('./public/js/common/rubix-bootstrap/rubix-bootstrap.js');
-require('./public/js/common/react-l20n/react-l20n.js');
+require('./common/rubix-bootstrap/rubix-bootstrap');
+/* require('./common/react-l20n/react-l20n'); */
